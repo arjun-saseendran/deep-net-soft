@@ -32,43 +32,35 @@ export const addMenu = async (req, res) => {
 
 // Display menus
 export const displayMenu = async (req, res) => {
-try {
+  try {
+    // Menus
+    const menus = await Menu.find();
 
-  // Menus
-  const menus = await Menu.find()
-
-  // Send menu to front
-  res.status(200).json({message: 'Menus fetched successfully', data: menus})
-  
-} catch (error) {
-  // Handle catch error
-  catchErrorHandler(res, error)
-}
-}
+    // Send menu to front
+    res
+      .status(200)
+      .json({ message: "Menus fetched successfully", data: menus });
+  } catch (error) {
+    // Handle catch error
+    catchErrorHandler(res, error);
+  }
+};
 
 // Get one menu
 export const getMenuById = async (req, res) => {
   try {
-  
-    const menuId = req.params.id
+    const menuId = req.params.id;
 
     // Menus
-    const menu = await Menu.findById(menuId)
-  
+    const menu = await Menu.findById(menuId);
+
     // Send menu to front
-    res.status(200).json({message: 'Menu fetched successfully', data: menu})
-    
+    res.status(200).json({ message: "Menu fetched successfully", data: menu });
   } catch (error) {
     // Handle catch error
-    catchErrorHandler(res, error)
+    catchErrorHandler(res, error);
   }
-  }
-  
-
-
-
-
-
+};
 
 // Get menu's food items
 export const getMenuFoodItems = async (req, res) => {
