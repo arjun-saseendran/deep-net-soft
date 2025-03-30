@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+}
+
+.menu-bar {
+  background-image: url("./assets//menu-image.png");
+  background-size: cover;
+}
+
+.btn-bar {
+  background-image: url("./assets//button-bar.png");
+  background-size: cover;
+}
+
+.left-bar {
+  background-image: url("./assets//left-side-image.png");
+  background-size: contain;
+}
+.right-bar {
+  background-image: url("./assets/right-side-image.png");
+  background-size: contain;
+}
